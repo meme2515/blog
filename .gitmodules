@@ -1,0 +1,4 @@
+[submodule "soonhkblog/public"]
+	path = soonhkblog/public
+	url = https://github.com/meme2515/meme2515.github.io.git
+	branch = main
