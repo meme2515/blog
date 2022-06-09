@@ -1,4 +1,4 @@
 baseURL = "https://meme2515.github.io/"
 languageCode = 'en-us'
-title = "Soon's Blog"
-theme = "hugo-theme-pixyll"
+title = "Soon Hyung's Blog"
+theme = "hugo-book"
