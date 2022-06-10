@@ -1,5 +1,0 @@
-baseURL = "https://meme2515.github.io/"
-languageCode = 'en-us'
-title = "Soon Hyung Kwon"
-headless = true
-theme = "hugo-theme-stack"
