@@ -23,10 +23,7 @@ permalinks:
 
 params:
     mainSections:
-        - ml
-        - mlops
-        - nn
-        - statistics
+        - neural_network
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -68,7 +65,7 @@ params:
     widgets:
         homepage:
             - type: search
-            - type: tag-cloud
+            - type: categories
               params:
                   limit: 10
         page:
@@ -98,35 +95,15 @@ params:
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
     main:
-        - identifier: Machine Learning
-          name: Machine Learning
-          weight: 3
-          url: /ml
-
-        - identifier: Statistics
-          name: Statistics
-          weight: 5
-          url: /statistics
-
-        - identifier: Neural Network
-          name: Neural Network
-          weight: 4
-          url: /nn
-
-        - identifier: MLOps
-          name: MLOps
-          weight: 6
-          url: /mlops
-
-        - identifier: Projects
-          name: Projects
-          weight: 2
-          url: /projects
-
         - identifer: About
           name: About
           weight: 1
           url: /about
+
+        - identifier: Neural Network
+          name: Neural Network
+          weight: 2
+          url: /neural_network
 
     social:
         - identifier: github
