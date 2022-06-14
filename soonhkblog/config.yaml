@@ -7,7 +7,7 @@ title: Soon Hyung Kwon
 disqusShortname: meme2515
 
 # GA Tracking ID
-googleAnalytics:
+googleAnalytics: UA-135204357-1
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -24,6 +24,7 @@ permalinks:
 params:
     mainSections:
         - neural_network
+        - mlops
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -104,6 +105,11 @@ menu:
           name: Neural Network
           weight: 2
           url: /neural_network
+
+        - identifier: MLOps
+          name: MLOps
+          weight: 3
+          url: /mlops
 
     social:
         - identifier: github
