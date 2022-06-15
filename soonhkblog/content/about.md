@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: "블로그 주인 소개"
-date: "2020-08-10 01:00:00+0200"
+date: "2022-06-10 00:00:00"
 slug: "about"
 image: "about.jpg"
 tags: [데이터, 데이터사이언스, 신경망, MLOps]
