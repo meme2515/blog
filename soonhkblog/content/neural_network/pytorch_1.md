@@ -1,5 +1,5 @@
 ---
-title: "PyTorch Deep Learning - 1. Tensor Basics"
+title: "PyTorch Deep Learning - 1. Tensor"
 description: "파이토치 노드를 구성하는 Tensor 소개"
 date: "2022-06-11 00:00:00"
 slug: "pytorch_1"
@@ -8,6 +8,16 @@ tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러
 categories: [Pytorch, Neural Network]
 ---
 본 글은 유튜버 *Python Engineer* 의 [Deep Learning With PyTorch](https://www.youtube.com/watch?v=c36lUUr864M) 을 기반으로 작성되었습니다. 글을 읽기 위한 사전지식은 행렬구조에 대한 이해, `numpy` 등 기본적인 파이썬 패키지에 대한 이해, 뉴럴넷에 대한 기본적인 이론으로 유튜브 비디오가 요하는 것과 동일합니다.
+
+**PyTorch Deep Learning 글 목록**
+
+1. [PyTorch Deep Learning - 1. Tensor](https://meme2515.github.io/neural_network/pytorch_1/)
+2. [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/)
+3. PyTorch Deep Learning - 3. Backpropagation & Gradient Descent
+4. PyTorch Deep Learning - 4. Model, Loss & Optimizer
+5. PyTorch Deep Learning - 5. Dataset & Dataloader
+6. PyTorch Deep Learning - 6. Activation Functions
+7. PyTorch Deep Learning - 7. Save & Load Models
 
 ## 소개
 
