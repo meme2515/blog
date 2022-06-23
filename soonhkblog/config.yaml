@@ -25,6 +25,7 @@ params:
     mainSections:
         - neural_network
         - mlops
+        - machine_learning
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -103,13 +104,18 @@ menu:
 
         - identifier: Neural Network
           name: Neural Network
-          weight: 2
+          weight: 3
           url: /neural_network
 
         - identifier: MLOps
           name: MLOps
-          weight: 3
+          weight: 4
           url: /mlops
+
+        - identifier: Machine Learning
+          name: Machine Learning
+          weight: 2
+          url: /machine_learning
 
     social:
         - identifier: github
