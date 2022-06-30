@@ -13,7 +13,7 @@ categories: [Pytorch, Neural Network]
 
 1. [PyTorch Deep Learning - 1. Tensor](https://meme2515.github.io/neural_network/pytorch_1/)
 2. [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/)
-3. PyTorch Deep Learning - 3. Backpropagation & Gradient Descent
+3. [PyTorch Deep Learning - 3. Backpropagation & Gradient Descent](https://meme2515.github.io/neural_network/pytorch_3/)
 4. PyTorch Deep Learning - 4. Model, Loss & Optimizer
 5. PyTorch Deep Learning - 5. Dataset & Dataloader
 6. PyTorch Deep Learning - 6. Activation Functions
