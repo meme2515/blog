@@ -26,6 +26,7 @@ params:
         - neural_network
         - mlops
         - machine_learning
+        - cloud_network
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -111,6 +112,11 @@ menu:
           name: MLOps
           weight: 4
           url: /mlops
+
+        - identifier: Cloud & Network
+          name: Cloud & Network
+          weight: 5
+          url: /cloud_network
 
         - identifier: Machine Learning
           name: Machine Learning
