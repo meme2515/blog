@@ -140,7 +140,7 @@ Putty 접속이 완료됐다. GUI 실행 시에는 이처럼 Putty 접속이 항
 
 ### Remote Desktop
 
-GUI 접속 단계이다. Windows 에 기본 설치되어있는 RDP 클라이언트 실행 후, 127.0.0.1:8888 에 접속하자.
+GUI 접속 단계이다. Windows 에 기본 설치되어있는 RDP 클라이언트 실행 후, 127.0.0.1:9000 에 접속하자.
 
 ![alt text](cloud_network/aws_gui_3_18.png)
 
