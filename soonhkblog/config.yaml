@@ -27,6 +27,7 @@ params:
         - mlops
         - machine_learning
         - cloud_network
+        - computer_science
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -117,6 +118,11 @@ menu:
           name: Cloud & Network
           weight: 5
           url: /cloud_network
+
+        - identifier: Computer Science
+          name: Computer Science
+          weight: 6
+          url: /computer_science
 
         - identifier: Machine Learning
           name: Machine Learning
