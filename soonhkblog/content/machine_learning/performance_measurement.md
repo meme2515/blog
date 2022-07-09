@@ -136,7 +136,7 @@ Receiver Operating Characteristic (ROC) Curve 또한 동일하게 threshold 의 
 
 | ![alt text](machine_learning/performance_6.png) |
 |:--:|
-| Fig 6. 분류기 모델의 ROC-AUC 예시 |
+| Fig 4. 분류기 모델의 ROC-AUC 예시 |
 
 ## Reference
 
