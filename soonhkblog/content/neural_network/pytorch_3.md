@@ -7,18 +7,6 @@ image: "neural_network/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor]
 categories: [Pytorch, Neural Network]
 ---
-본 글은 유튜버 *Python Engineer* 의 [Deep Learning With PyTorch](https://www.youtube.com/watch?v=c36lUUr864M) 을 기반으로 작성되었습니다. 글을 읽기 위한 사전지식은 행렬구조에 대한 이해, `numpy` 등 기본적인 파이썬 패키지에 대한 이해, 뉴럴넷에 대한 기본적인 이론으로 유튜브 비디오가 요하는 것과 동일합니다.
-
-**PyTorch Deep Learning 글 목록**
-
-1. [PyTorch Deep Learning - 1. Tensor](https://meme2515.github.io/neural_network/pytorch_1/)
-2. [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/)
-3. [PyTorch Deep Learning - 3. Backpropagation & Gradient Descent](https://meme2515.github.io/neural_network/pytorch_3/)
-4. PyTorch Deep Learning - 4. Model, Loss & Optimizer
-5. PyTorch Deep Learning - 5. Dataset & Dataloader
-6. PyTorch Deep Learning - 6. Activation Functions
-7. PyTorch Deep Learning - 7. Save & Load Models
-
 ## 소개
 
 머신러닝과 분야에서 가장 뼈대가 되는 수학 공식은 [경사하강](https://ko.wikipedia.org/wiki/%EA%B2%BD%EC%82%AC_%ED%95%98%EA%B0%95%EB%B2%95)이다. 왜일까? [SVM](https://ko.wikipedia.org/wiki/%EC%84%9C%ED%8F%AC%ED%8A%B8_%EB%B2%A1%ED%84%B0_%EB%A8%B8%EC%8B%A0), [선형회귀](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%98%95_%ED%9A%8C%EA%B7%80), [신경망](https://www.ibm.com/kr-ko/cloud/learn/neural-networks)과 같은 통상적인 예측 모델은 모두 다른 방식으로 예측값 $\tilde{Y}$ 를 예측하지만, 이 모든 모델의 정확도를 향상하는 학습과정에서는 언제나 알고리즘에 알맞는 경사하강 공식을 사용하기 때문이다. 구체적으로 경사하강이란 모델의 성능을 더 나은 방향으로 개선시킬 수 있도록 조절 가능한 모델의 변수를 업데이트하는 과정을 가르킨다.

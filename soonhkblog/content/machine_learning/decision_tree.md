@@ -7,12 +7,6 @@ image: machine_learning/decision_tree_1.png
 tags: []
 categories: []
 ---
-## Decision Tree 연관 글 목록
-
-1. [결정 트리 (Decision Tree) 기초 개념](https://meme2515.github.io/machine_learning/decision_tree)
-2. 앙상블 학습 (Ensemble Learning) 과 랜덤 포레스트 (Random Forest) 소개
-3. 부스팅 알고리즘 (Gradient Boosting) 개념과 LightGBM, XGBoost 패키지 소개
-
 ## 소개
 
 구직 활동 중 한 회사에서 입사제의를 받았다고 가정하자. 개인마다 그 정도에는 차이가 있겠지만, 제안을 수락하기 까지에는 일종의 의사결정 체계가 존재할 것이다. 대표적으로 다음과 같은 질문을 자신에게 던져볼 수 있다.

@@ -7,16 +7,6 @@ image: "neural_network/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor, 경사하강, autograd]
 categories: [Pytorch, Neural Network, Autograd]
 ---
-**PyTorch Deep Learning 글 목록**
-
-1. [PyTorch Deep Learning - 1. Tensor](https://meme2515.github.io/neural_network/pytorch_1/)
-2. [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/)
-3. [PyTorch Deep Learning - 3. Backpropagation & Gradient Descent](https://meme2515.github.io/neural_network/pytorch_3/)
-4. PyTorch Deep Learning - 4. Model, Loss & Optimizer
-5. PyTorch Deep Learning - 5. Dataset & Dataloader
-6. PyTorch Deep Learning - 6. Activation Functions
-7. PyTorch Deep Learning - 7. Save & Load Models
-
 ## 소개
 
 신경망을 수학적으로 구현함에 있어 가장 까다로운 부분은 [역전파 (backpropagation)](http://wiki.hash.kr/index.php/%EC%97%AD%EC%A0%84%ED%8C%8C) 과정이다. 짧게 설명하자면, 모델에 존재하는 각각의 가중치(weight)와 편향(bias)이 [손실함수](https://en.wikipedia.org/wiki/Loss_function)에 어떠한 영향을 끼치는지를 연산한 다음, 이 정보를 활용해 가중치와 편향의 값을 손실함수를 줄이는 방향으로 갱신시키는 과정이다. 개념적인 이해가 필요하다면 앞선 역전파 해시넷 링크와 더불어 [1](https://www.youtube.com/watch?v=Ilg3gGewQ5U)번, [2](https://www.youtube.com/watch?v=1Q_etC_GHHk)번 비디오를 참고하자.

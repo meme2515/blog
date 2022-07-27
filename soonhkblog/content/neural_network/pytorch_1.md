@@ -7,18 +7,6 @@ image: "neural_network/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor]
 categories: [Pytorch, Neural Network]
 ---
-본 글은 유튜버 *Python Engineer* 의 [Deep Learning With PyTorch](https://www.youtube.com/watch?v=c36lUUr864M) 을 기반으로 작성되었습니다. 글을 읽기 위한 사전지식은 행렬구조에 대한 이해, `numpy` 등 기본적인 파이썬 패키지에 대한 이해, 뉴럴넷에 대한 기본적인 이론으로 유튜브 비디오가 요하는 것과 동일합니다.
-
-**PyTorch Deep Learning 글 목록**
-
-1. [PyTorch Deep Learning - 1. Tensor](https://meme2515.github.io/neural_network/pytorch_1/)
-2. [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/)
-3. [PyTorch Deep Learning - 3. Backpropagation & Gradient Descent](https://meme2515.github.io/neural_network/pytorch_3/)
-4. PyTorch Deep Learning - 4. Model, Loss & Optimizer
-5. PyTorch Deep Learning - 5. Dataset & Dataloader
-6. PyTorch Deep Learning - 6. Activation Functions
-7. PyTorch Deep Learning - 7. Save & Load Models
-
 ## 소개
 
 `tensor`란 `numpy`와 유사하게 다차원 행렬을 다룰수있는 PyTorch 패키치의 자료구조다. 신경망 개론 수업에서 `numpy` 패키지를 활용해 node와 weight, bias 등을 구현하고는 하는데 같은 개념의 연산을 **GPU 등 적합한 하드웨어 자원을 통해 수행하고자 할때** `tensor`를 이용하게 된다. Tensorflow 패키지 또한 동일한 개념과 이름을 가진 `tf.Tensor`를 사용한다.
