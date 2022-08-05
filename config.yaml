@@ -1,0 +1,172 @@
+baseurl: https://meme2515.github.io/
+languageCode: en-us
+theme: hugo-theme-stack
+title: Soon Hyung Kwon
+
+# Change it to your Disqus shortname before using
+disqusShortname: meme2515
+
+# GA Tracking ID
+googleAnalytics: UA-135204357-1
+
+# Theme i18n support
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage: en
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage: false
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - neural_network
+        - mlops
+        - machine_learning
+        - cloud_network
+        - computer_science
+    featuredImageField: image
+    rssFullContent: true
+    favicon:
+
+    footer:
+        since: 2022
+        customText:
+
+    dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 MST
+
+    sidebar:
+        subtitle: 데이터 블로그입니다 :)
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.png
+
+    article:
+        math: true
+        toc: true
+        readingTime: true
+        license:
+            enabled: true
+            default: Licensed under CC BY-NC-SA 4.0
+
+    comments:
+        enabled: true
+        provider: disqus
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+    widgets:
+        homepage:
+            - type: search
+            - type: categories
+              params:
+                  limit: 10
+        page:
+            - type: toc
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: light
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main:
+        - identifer: About
+          name: About
+          weight: 1
+          url: /about
+
+        - identifier: Neural Network
+          name: Neural Network
+          weight: 3
+          url: /neural_network
+
+        - identifier: MLOps
+          name: MLOps
+          weight: 4
+          url: /mlops
+
+        - identifier: Cloud & Network
+          name: Cloud & Network
+          weight: 5
+          url: /cloud_network
+
+        - identifier: Computer Science
+          name: Computer Science
+          weight: 6
+          url: /computer_science
+
+        - identifier: Machine Learning
+          name: Machine Learning
+          weight: 2
+          url: /machine_learning
+
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/meme2515
+          params:
+              icon: github
+
+        - identifier: linkedin
+          name: LinkedIn
+          url: https://www.linkedin.com/in/soon-hyung-kwon-73a3221ab/
+          params:
+              icon: linkedin
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
