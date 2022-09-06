@@ -23,11 +23,13 @@ permalinks:
 
 params:
     mainSections:
+        - machine_learning
         - neural_network
         - mlops
-        - machine_learning
-        - cloud_network
+        - statistics
         - computer_science
+        - cloud_network
+        - daily
     featuredImageField: image
     rssFullContent: true
     favicon:
@@ -104,6 +106,11 @@ menu:
           weight: 1
           url: /about
 
+        - identifier: Machine Learning
+          name: Machine Learning
+          weight: 2
+          url: /machine_learning
+
         - identifier: Neural Network
           name: Neural Network
           weight: 3
@@ -114,20 +121,25 @@ menu:
           weight: 4
           url: /mlops
 
-        - identifier: Cloud & Network
-          name: Cloud & Network
+        - identifier: Statistics
+          name: Statistics
           weight: 5
-          url: /cloud_network
+          url: /statistics
 
         - identifier: Computer Science
           name: Computer Science
           weight: 6
           url: /computer_science
 
-        - identifier: Machine Learning
-          name: Machine Learning
-          weight: 2
-          url: /machine_learning
+        - identifier: Cloud & Network
+          name: Cloud & Network
+          weight: 7
+          url: /cloud_network
+
+        - identifier: Daily
+          name: Daily
+          weight: 8
+          url: /daily
 
     social:
         - identifier: github
