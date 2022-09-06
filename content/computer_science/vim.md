@@ -1,6 +1,6 @@
 ---
 title: "Vim 에디터 소개와 기본적인 명령어 정리"
-description: "CLI 에디터 사용 이유, 기본 단축키 및 Vim 프로그래밍 Cheatsheet"
+description: "CLI 에디터 사용 이유, 기본 개념 소개 및 단축키 Cheatsheet"
 date: "2022-09-05 00:00:00"
 slug: "vim"
 image: computer_science/vim.bmp
