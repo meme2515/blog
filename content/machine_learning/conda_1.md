@@ -3,7 +3,7 @@ title: "Conda 환경 공유 방법"
 description: "YAML 파일 기반 환경 저장 및 구축 노트"
 date: "2022-06-23 00:00:00"
 slug: "conda_1"
-image: machine_learning/conda.png
+image: machine_learning/images/conda.png
 tags: [콘다 YAML, 콘다 환경 공유, conda 환경, 파이썬, 주피터]
 categories: [Python, Conda, Anaconda, Environment Sharing]
 ---

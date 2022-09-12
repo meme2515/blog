@@ -3,7 +3,7 @@ title: "Vim 에디터 소개와 기본적인 명령어 정리"
 description: "CLI 에디터 사용 이유, 기본 개념 소개 및 단축키 Cheatsheet"
 date: "2022-09-05 00:00:00"
 slug: "vim"
-image: computer_science/vim.bmp
+image: computer_science/images/vim.bmp
 tags: [Vim, 리눅스, 유닉스, Vim 에디터, 커맨드 라인]
 categories: [리눅스, Vim]
 ---
@@ -12,7 +12,7 @@ categories: [리눅스, Vim]
 
 유명한 [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) 의 Vim 관련 강의 비디오 링크.
 
-[![image](computer_science/vim_2.png)](https://www.youtube.com/watch?v=a6Q8Na575qc)
+[![image](computer_science/images/vim_2.png)](https://www.youtube.com/watch?v=a6Q8Na575qc)
 
 ## 등장 배경과 특징
 

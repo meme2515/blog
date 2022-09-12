@@ -3,7 +3,7 @@ title: "수학적으로 이해하는 최적화 기법 - 모멘텀, RMSProp, ADAM
 description: "경사하강 최적화 기법 ADAM 소개"
 date: "2022-06-15 00:00:00"
 slug: "optimizer"
-image: "neural_network/adam.png"
+image: "neural_network/images/adam.png"
 tags: [adam, 최적화, optimizer, rmsprop, momentum, 모멘텀, 경사하강]
 categories: [Neural Network, Optimizer, 최적화]
 ---
@@ -23,7 +23,7 @@ $$
 
 다만 mini-batch 경사하강의 경우 매 iteration에서 리소스적인 문제로 전체 데이터가 아닌 부분 데이터를 활용하기 때문에 여기서 하강이 이루어지는 방향이 직진성을 띄고 있지 않을 가능성이 높은데, **모멘텀**은 이러한 문제를 해결하기 위해 **변수 별 미분값의 점진적 평균값 (지수 가중 평균) 을 구해 하강의 방향성을 찾는다**. 
 
-![alt text](neural_network/adam_2.png "Title")
+![alt text](neural_network/images/adam_2.png "Title")
 
 위 그림에서 y축 변수의 하강 방향은 지그재그 형태를 띄는 반면, x축 변수의 하강 방향은 일정한 방향성을 띄고있다. 이로 인해 기본적인 형태의 경사하강 진행 시 **학습 과정이 불필요하게 길어지게되는 결과**를 야기하게되나, 모멘텀 최적화 방식을 이용하면 y축 변수 하강 방향의 점진적 평균은 0에 가까워지며, x축 변수 하강 방향의 점진적 평균값은 유지되기 때문에 **불필요한 학습 과정이 줄어드는 (직진성) 효과를 가진다**. 
 
@@ -43,7 +43,7 @@ $$
 
 아래 그래프는 파란색으로 표기된 Original 데이터에 조금씩 큰 $\beta$ 값을 사용하며 계산한 EWMA 를 시각화한 결과이다. 회색이 가장 낮은 $\beta$, 빨간색이 가장 높은 $\beta$ 에 해당하는데, **$\beta$ 값이 높을수록 과거 데이터에 큰 영향을 받으며 신규 데이터에 대한 적응 딜레이가 생기는 점이 확인 가능하다**.
 
-![alt text](neural_network/adam_4.jpeg "Title")
+![alt text](neural_network/images/adam_4.jpeg "Title")
 
 ### Bias Correction
 

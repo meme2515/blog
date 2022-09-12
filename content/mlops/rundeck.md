@@ -3,7 +3,7 @@ title: "배치 관리 소프트웨어 런데크 (Rundeck)"
 description: "배치 스케줄링 및 관리 소프트웨어 런데크 소개"
 date: "2022-06-13 00:00:00"
 slug: "rundeck"
-image: "mlops/rundeck-wordmark.svg"
+image: "mlops/images/rundeck-wordmark.svg"
 tags: [배치관리, 배치 스케줄링, 태스크 스케줄링, 태스크 관리, 원격 pc 커맨드, MLOps, DevOps, SRE]
 categories: [MLOps, Batch Job, Batch Scheduling, Task Management, SRE]
 ---
@@ -19,7 +19,7 @@ categories: [MLOps, Batch Job, Batch Scheduling, Task Management, SRE]
 
 ## Rundeck 소개
 
-| ![alt text](mlops/rundeck_example.png) |
+| ![alt text](mlops/images/rundeck_example.png) |
 |:--:|
 | Fig 1. Rundeck 파이프라인 예 - 유저가 생성한 Job 들을 Node 별로 할당 및 실행, 에러 발생 등 유사시 알림 설정 |
 
@@ -43,7 +43,7 @@ Rundeck 내 작업 환경의 개념이다. 한개 Rundeck 서버에 여러개의
 
 실행하고자 하는 프로세스의 묶음이다. [윈도우 batch 파일](https://en.wikipedia.org/wiki/Batch_file), [Airflow의 DAG](https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html) 개념과 유사하다.
 
-| ![alt text](mlops/airflow_example.png) |
+| ![alt text](mlops/images/airflow_example.png) |
 |:--:|
 | Fig 2. Airflow의 DAG 개념 예 - branch_b를 에러 케이스라고 보면 될 듯 하다 |
 

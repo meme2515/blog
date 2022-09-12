@@ -3,7 +3,7 @@ title: "PyTorch Deep Learning - 1. Tensor"
 description: "파이토치 노드를 구성하는 Tensor 소개"
 date: "2022-06-11 00:00:00"
 slug: "pytorch_1"
-image: "neural_network/pytorch.jpeg"
+image: "neural_network/images/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor]
 categories: [Pytorch, Neural Network]
 ---

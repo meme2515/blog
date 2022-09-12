@@ -3,7 +3,7 @@ title: "Precision, Recall, F1 스코어 등의 모델 평가 방법"
 description: "Precision, Recall 스코어의 등장 배경과 파생 평가 방법에 대한 상세 내용"
 date: "2022-07-06 00:00:00"
 slug: "performance_measurement"
-image: machine_learning/performance_1.png
+image: machine_learning/images/performance_1.png
 tags: [Precision, Recall, F1, 정확도, 모델평가]
 categories: [Precision, Recall, F1, 모델평가]
 ---
@@ -23,7 +23,7 @@ $$
 
 평가 지표 개념을 설명하기 전에 [오차 행렬 (Confusion Matrix)](https://en.wikipedia.org/wiki/Confusion_matrix) 의 개념을 짚고가자. 기본적으로 오차 행렬은 문제 내 존재하는 클래스들의 예측 조합을 보여준다. 예를 들자면 90건의 클래스 Non-Spam 이 Non-Spam 으로 예측된 경우가 82건, Spam 으로 예측된 경우가 8건과 같은 식이다. 아래 그림을 확인하자.
 
-| ![alt text](machine_learning/performance_1.png) |
+| ![alt text](machine_learning/images/performance_1.png) |
 |:--:|
 | Fig 1. 단순 OX 문제에 대한 오차 행렬 |
 
@@ -68,7 +68,7 @@ Recall 은 **실제 스팸메일 중 스팸메일로 예측된 메일의 비율*
 
 Recall 이 중요한 지표로 작용하는 예시로는 의료적 진단이 있다. 실제 암환자에게 정확한 진단을 내리지 못하는 경우가 많아질수록 환자가 치료시기를 놓칠 위험이 증가하게 된다. 아프지 않은 환자에게 암 진단을 내리는 경우가 생길지언정 실제 암 환자에게 암 진단을 내리지 못하는 비율은 최소한으로 유지해야한다.
 
-| ![alt text](machine_learning/performance_3.jpg) |
+| ![alt text](machine_learning/images/performance_3.jpg) |
 |:--:|
 | Fig 2. Precision Recall 개념의 이해를 돕는 그림 |
 
@@ -112,7 +112,7 @@ $$
 
 ## PR Curve, ROC Curve
 
-| ![alt text](machine_learning/performance_5.png) |
+| ![alt text](machine_learning/images/performance_5.png) |
 |:--:|
 | Fig 3. 분류기 모델의 ROC, PR Curve 예시 |
 
@@ -134,7 +134,7 @@ Receiver Operating Characteristic (ROC) Curve 또한 동일하게 threshold 의 
 
 **Area Under the Curve (AUC)** 는 말 그대로 적분을 통해 **PR Curve 와 ROC Curve 의 부피**를 구한 값이다. 어떤 그래프의 부피인가에 따라 ROC-AUC, PR-AUC 로 정의되며, 모델 평가에 가장 일반적으로 쓰이는 지표는 ROC-AUC 이다. AUC 는 (0, 1) 의 범위를 가지고 있기 떄문에 **ROC-AUC, PR-AUC 모두 1에 가까울수록 정확도가 높은 분류기로 정의할 수 있다**.
 
-| ![alt text](machine_learning/performance_6.png) |
+| ![alt text](machine_learning/images/performance_6.png) |
 |:--:|
 | Fig 4. 분류기 모델의 ROC-AUC 예시 |
 

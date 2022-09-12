@@ -3,7 +3,7 @@ title: "PyTorch Deep Learning - 2. Autograd"
 description: "자동 미분 개념과 관련 PyTorch 패키지 소개"
 date: "2022-06-20 00:00:00"
 slug: "pytorch_2"
-image: "neural_network/pytorch.jpeg"
+image: "neural_network/images/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor, 경사하강, autograd]
 categories: [Pytorch, Neural Network, Autograd]
 ---
@@ -68,7 +68,7 @@ Numerical 접근에선 크게 두가지 문제점이 존재한다. 첫번째 문
 
 Symbolic 접근은 사람이 실제 미분 연산시에 사용하는 연산 규칙 (예를 들어 $\sin (x)$ 의 미분값은 $\cos (x)$) 을 기반으로 편미분을 구하는 방식이다. 해당 접근법에서 손실함수는 가중치와 편향의 수식으로 표현되며, 연산 규칙을 그 기반으로 하기에 numerical 접근법의 오차 문제를 해결한다. 대표적인 예시로 [SymPy](https://www.sympy.org/en/index.html) 패키지가 있다. 
 
-| ![alt text](neural_network/pytorch_2_2.png) |
+| ![alt text](neural_network/images/pytorch_2_2.png) |
 |:--:|
 | Fig 1. SymPy 패키지 적분 연산 사용 예시 |
 
@@ -94,7 +94,7 @@ $$
 
 Automatic 접근은 수식에 기반하는 대신, 덧셈, 곱셈과 같은 개별적인 연산자 그래프 (DAG) 를 생성하여 미분 연산 과정을 가장 작은 단위에서 수행하는 접근법이다. 다음 그래프를 참고하자.
 
-| ![alt text](neural_network/pytorch_2_3.png) |
+| ![alt text](neural_network/images/pytorch_2_3.png) |
 |:--:|
 | Fig 2. 단일 뉴런의 Autograd DAG 예시 |
 

@@ -3,7 +3,7 @@ title: "PyTorch Deep Learning - 3. Backpropagation & Gradient Descent"
 description: "파이토치를 활용한 오차역전파와 경사하강 실습"
 date: "2022-06-28 00:00:00"
 slug: "pytorch_3"
-image: "neural_network/pytorch.jpeg"
+image: "neural_network/images/pytorch.jpeg"
 tags: [pytorch, 파이토치, 뉴럴넷, pytorch 사용법, 신경망, 머신러닝, 텐서, pytorch tensor]
 categories: [Pytorch, Neural Network]
 ---
@@ -17,7 +17,7 @@ categories: [Pytorch, Neural Network]
 
 [PyTorch Deep Learning - 2. Autograd](https://meme2515.github.io/neural_network/pytorch_2/) 글에서 살펴보았듯 신경망의 gradient 값을 도출하기 위해서는 역전파를 수행해야하며, 이는 PyTorch 라이브러리의 autograd 기능을 활용해 구현이 가능하다.
 
-| ![alt text](neural_network/pytorch_2_1.png) |
+| ![alt text](neural_network/images/pytorch_2_1.png) |
 |:--:|
 | Fig 1. 단일 뉴런의 역전파 과정 |
 
@@ -47,7 +47,7 @@ $x = 1$ 의 인풋을 활용해 $y = 2$ 를 예측하는 단일 뉴런 모델의
 
 경사하강이란 연산한 gradient 의 반대방향, 즉 손실함수를 낮추는 방향으로 모델의 파라미터를 업데이트하는 과정을 일컫는다. 아래 그림에서 start 지점의 gradient, 즉 미분값은 경사가 상대적으로 큰 양수값이며, 따라서 손실함수 $J(W)$ 를 최소화하기 위해 반대방향인 음수값으로 $w$ 를 업데이트하는 과정을 확인할 수 있다. 아직 gradient가 어떻게 손실함수를 낮추는 방향을 제시하는가에 대한 직관적인 이해가 이루어지지 않는다면 [1](https://www.youtube.com/watch?v=GEdLNvPIbiM), [2](https://www.youtube.com/watch?v=IHZwWFHWa-w) 비디오를 참고하길 바란다. 또한 [해당](http://localhost:1313/neural_network/optimizer/) 글은 Momentum, RMSProp, Adam 등 다양한 경사하강법을 소개하고있다.
 
-| ![alt text](neural_network/pytorch_3_1.png) |
+| ![alt text](neural_network/images/pytorch_3_1.png) |
 |:--:|
 | Fig 2. 단일 뉴런의 역전파 과정 |
 

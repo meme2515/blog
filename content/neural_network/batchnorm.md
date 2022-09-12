@@ -3,7 +3,7 @@ title: "배치정규화 (Batch Normalization) 란?"
 description: "배치정규화 등장 배경과 구현 방법, 성능 개선 방식 등 설명"
 date: "2022-06-26 00:00:00"
 slug: "batchnorm"
-image: "neural_network/batchnorm.png"
+image: "neural_network/images/batchnorm.png"
 tags: [배치정규화, 정규화, regularization, neural network]
 categories: [Regularization, Batch Norm, PyTorch]
 ---
@@ -64,7 +64,7 @@ $$
 
 ### 1. 학습 속도 개선
 
-![alt text](neural_network/batchnorm_2.png "Title")
+![alt text](neural_network/images/batchnorm_2.png "Title")
 
 정규화된 분포는 어떻게 학습 속도를 개선할까? 위 그림에서 왼쪽 그래프는 정규화가 적용되지 않은 경우의 손실함수를, 오른쪽 그래프는 정규화가 적용된 경우의 손실함수를 시각화 하고있다. 왼쪽의 경우 전반적인 손실함수 결과값이 $x$ 축 변수보다 $y$ 축 변수의 움직임에 더 민감한 부분을 확인할 수 있는데, 따라서 큰 학습속도 $\alpha$ 를 적용할 경우 방향성을 잃어 최적값을 찾지 못하는 문제가 발생할 여지를 가지게 된다. **두 변수의 스케일 차이가 학습률에 제약을 가져오는 것이다**.
 

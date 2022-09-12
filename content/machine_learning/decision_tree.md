@@ -3,7 +3,7 @@ title: "결정 트리 (Decision Tree) 기초 개념"
 description: "지니 불순도, 엔트로피, 회귀 문제까지의 기초 개념 정리"
 date: "2022-07-15 00:00:00"
 slug: "decision_tree"
-image: machine_learning/decision_tree_1.png
+image: machine_learning/images/decision_tree_1.png
 tags: [결정트리, Decision Tree, 머신러닝, 지니 불순도, 엔트로피]
 categories: [결정트리, 머신러닝, 불순도]
 ---
@@ -25,7 +25,7 @@ categories: [결정트리, 머신러닝, 불순도]
 
 만약 꽃잎의 길이가 0.8 cm 보다 클 경우, 모델은 다음 노드로 이동하여 꽃잎 길이가 1.75 cm 보다 작거나 같은지 확인한다. 그렇다면 붓꽃을 versicolor 클래스로, 그렇지 않다면 virginica 클래스로 분류한다. 
 
-| ![alt text](machine_learning/decision_tree_2.png) |
+| ![alt text](machine_learning/images/decision_tree_2.png) |
 |:--:|
 | Fig 1. Sklearn 패키지의 결정 트리 모델 예시 |
 
@@ -88,7 +88,7 @@ $$
 J(k,t_k) = \frac{m_{left}}{m} MSE_{left} + \frac{m_{right}}{m} MSE_{right}
 $$
 
-| ![alt text](machine_learning/decision_tree_3.png) |
+| ![alt text](machine_learning/images/decision_tree_3.png) |
 |:--:|
 | Fig 2. 결정 트리를 사용한 회귀 모델 예시 |
 

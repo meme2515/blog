@@ -3,7 +3,7 @@ title: "(논문 리뷰) 쉽게 이해하는 AlexNet 과 PyTorch 코드 예시"
 description: "2012년 NeurlPS 논문 요약 및 Papers With Code 코드 분석"
 date: "2022-07-12 00:00:00"
 slug: "alexnet"
-image: "neural_network/alexnet_1.png"
+image: "neural_network/images/alexnet_1.png"
 tags: [AlexNet, 뉴럴넷, 논문리뷰]
 categories: [AlexNet, 뉴럴넷]
 ---
@@ -17,7 +17,7 @@ categories: [AlexNet, 뉴럴넷]
 - 매년 [ImageNet Large Scale Visual Recognition Challenge (ILSVRC)](https://www.image-net.org/challenges/LSVRC/) 라는 레이블 예측 대회를 개최하고 있으며, 2012년 기준 약 120만개의 이미지-레이블 셋으로 이루어져 있었다 (22년 현재 1,400만).
 - Top-1 에러율, top-5 에러율 등으로 모델의 정확도를 평가하는데, 여기서 top-5 에러란 likelihood 가 가장 높은 5개 레이블에 실제 레이블이 포함되지 않은 경우를 가르킨다.
 
-| ![alt text](neural_network/alexnet_4.png) |
+| ![alt text](neural_network/images/alexnet_4.png) |
 |:--:|
 | Fig 1. ImageNet 데이터 예시 |
 
@@ -34,7 +34,7 @@ $$
 
 - ReLU 활성화를 사용하게 된 배경에는 2012 당시 AlexNet 의 구조가 기타 CNN에 비해 복잡하고, 크다는 점이 있었다 ('92년 공개된 LeNet-5 가 대략 6만개의 학습 가능한 파라미터를 가지고 있는 반면, AlexNet은 6천만개의 파라미터를 가지고있다).
 
-| ![alt text](neural_network/alexnet_3.png) |
+| ![alt text](neural_network/images/alexnet_3.png) |
 |:--:|
 | Fig 2. CIFAR-10 데이터에 대한 ReLU (실선) vs. tanh (점선) 학습율 비교 |
 
@@ -50,7 +50,7 @@ $$
 - ReLU 활성화 함수 사용으로 인풋 정규화를 반드시 사용해야할 이유는 없으나, AlexNet 의 경우 Local Response Normalization 이 모델의 일반화에 도움을 준다는 점을 발견했다.
 - 인접한 $n$ 개 채널에 대한 정규화라고 이해하면된다. 하단 슬라이드의 좌측 도표 참고.
 
-| ![alt text](neural_network/alexnet_5.jpg) |
+| ![alt text](neural_network/images/alexnet_5.jpg) |
 |:--:|
 | Fig 3. Local Response Normalization 예시 |
 
@@ -77,7 +77,7 @@ $$
 - 모든 convolution 레이어와 FC 레이어에 ReLU 활성화가 적용된다.
 - 최초 인풋 사이즈는 227 x 227 x 3 이다 (논문에는 224 x 224 x 3 으로 잘못 표기되어있는 것으로 보인다).
 
-| ![alt text](neural_network/alexnet_1.png) |
+| ![alt text](neural_network/images/alexnet_1.png) |
 |:--:|
 | Fig 4. AlexNet 구조 (실제 논문 또한 이미지의 상단이 잘려있다) |
 
