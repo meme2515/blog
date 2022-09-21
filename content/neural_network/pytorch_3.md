@@ -1,5 +1,5 @@
 ---
-title: "PyTorch Deep Learning - 3. Backpropagation & Gradient Descent"
+title: "PyTorch Deep Learning - Backpropagation & Gradient Descent"
 description: "파이토치를 활용한 오차역전파와 경사하강 실습"
 date: "2022-06-28 00:00:00"
 slug: "pytorch_3"

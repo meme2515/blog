@@ -1,5 +1,5 @@
 ---
-title: "PyTorch Deep Learning - 2. Autograd"
+title: "PyTorch Deep Learning - Autograd"
 description: "자동 미분 개념과 관련 PyTorch 패키지 소개"
 date: "2022-06-20 00:00:00"
 slug: "pytorch_2"

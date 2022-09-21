@@ -1,5 +1,5 @@
 ---
-title: "PyTorch Deep Learning - 1. Tensor"
+title: "PyTorch Deep Learning - Tensor"
 description: "파이토치 노드를 구성하는 Tensor 소개"
 date: "2022-06-11 00:00:00"
 slug: "pytorch_1"

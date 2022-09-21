@@ -54,7 +54,7 @@ Fig 3. 에서 확인할 수 있듯이 인풋은 임베딩된 단어 벡터이며
 
 | ![alt text](neural_network/images/transformer_6.bmp) |
 |:--:|
-| Fig 6. Multi-Head Attention 예시 |
+| Fig 4. Multi-Head Attention 예시 |
 
 Self-Attention 의 개념을 이해했다면, Multi-Head Attention 은 이러한 Self-Attention 을 여러번 수행하는 과정이라고 설명할 수 있다. 한번의 Self-Attention 과정은 "Head" 로 표현되며, 8-Head Attention 이란 Self-Attention 이 8번 수행된 결과가 되는 식이다. 여기서 각각의 Head 는 qKV 특성에 서로 다른 가중치를 적용하여 구분되며, 개념적으로는 (1) 무엇을 했는가? (2) 언제 했는가? 와 같이 질문의 내용이 변형되는 과정이다.
 
@@ -64,17 +64,17 @@ Self-Attention 의 개념을 이해했다면, Multi-Head Attention 은 이러한
 
 | ![alt text](neural_network/images/transformer_1.bmp) |
 |:--:|
-| Fig 7. Transformer 네트워크 구조 |
+| Fig 5. Transformer 네트워크 구조 |
 
 트랜스포머 네트워크는 machine translation, 즉 언어 간 해석 문제를 염두하고 만들어졌기 때문에 한개의 언어를 해석하는 encoder 블록, 다른 언어를 생성하는 decoder 블록으로 구분할 수 있다. 
 
 ### Encoder
 
-Fig 7. 의 좌측 도식화에 해당하는 부분이다. 우선 임베딩된 인풋 문장 Jane visite l'Afrique en septembre (Input Encoding) 에서 Q, K, V 특성을 추출한 후, 이에 Multi-Head Attention 을 적용해 문장에 대한 해석 정보가 담긴 매트릭스를 생성한다 (여기서 Q, K, V 특성은 세갈래의 화살표로 표기되어있다). 이후 일반적인 신경망 구조를 통해 해당 매트릭스에서 중요한 정보를 선별하며, 여기까지의 과정을 N 번 반복한다. Multi-Head Attention 과 Feed Forward 레이어에서 생성되는 아웃풋에는 여타 신경망의 [Batch Normalization](https://meme2515.github.io/neural_network/batchnorm/) 과 유사한 Add & Normalization 이 적용된다. 
+Fig 5. 의 좌측 도식화에 해당하는 부분이다. 우선 임베딩된 인풋 문장 Jane visite l'Afrique en septembre (Input Encoding) 에서 Q, K, V 특성을 추출한 후, 이에 Multi-Head Attention 을 적용해 문장에 대한 해석 정보가 담긴 매트릭스를 생성한다 (여기서 Q, K, V 특성은 세갈래의 화살표로 표기되어있다). 이후 일반적인 신경망 구조를 통해 해당 매트릭스에서 중요한 정보를 선별하며, 여기까지의 과정을 N 번 반복한다. Multi-Head Attention 과 Feed Forward 레이어에서 생성되는 아웃풋에는 여타 신경망의 [Batch Normalization](https://meme2515.github.io/neural_network/batchnorm/) 과 유사한 Add & Normalization 이 적용된다. 
 
 ### Decoder
 
-Fig 7. 의 우측 도식화에 해당하는 부분이다. 인풋엔 생성하고자 하는 문장의 단어들이 순차적으로 입력되며, 최초엔 이러한 문장 정보가 없기 때문에 start-of-sentence 라는 의미의 SOS 토큰 등을 활용하게 된다. 이후 임베딩된 단어 인풋에서 Q, K, V 특성을 추출 후, 이에 Multi-Head Attention 을 적용한다. Encoder 와 다른 점은 이 Multi-Head Attention 의 아웃풋이 해석 정보를 가진 매트릭스가 아닌 Q, 즉 인풋 단어에 대한 복수의 질문 정보를 담은 매트릭스라는 점이다. 
+Fig 5. 의 우측 도식화에 해당하는 부분이다. 인풋엔 생성하고자 하는 문장의 단어들이 순차적으로 입력되며, 최초엔 이러한 문장 정보가 없기 때문에 start-of-sentence 라는 의미의 SOS 토큰 등을 활용하게 된다. 이후 임베딩된 단어 인풋에서 Q, K, V 특성을 추출 후, 이에 Multi-Head Attention 을 적용한다. Encoder 와 다른 점은 이 Multi-Head Attention 의 아웃풋이 해석 정보를 가진 매트릭스가 아닌 Q, 즉 인풋 단어에 대한 복수의 질문 정보를 담은 매트릭스라는 점이다. 
 
 앞서 설명한 Encoder 는 궁극적으로 이에 대응하는 K, V 매트릭스를 생성하게 된다 (양 블록을 있는 두개의 화살표로 표현). 따라서 Decoder 의 질문에 대응하는 답변을 줄 수 있게 설계된 것이다. 이러한 두 갈래의 Q, K, V 특성은 다시 Multi-Head Attention 레이어에 적용되며, 이를 통해서 아웃풋된 두 언어의 상관성 정보를 담은 매트릭스는 Feed Forward 레이어를 통해 중요한 정보만을 남기게 된다. 여기까지의 과정 또한 N 번 반복 후, Softmax Activation 을 통해 여러 단어 중 가장 알맞은 단어를 선택하게 된다. 
 
@@ -86,7 +86,7 @@ Decoder 블록 또한 각 레이어 별로 Add & Normalization 이 적용된다.
 
 | ![alt text](neural_network/images/transformer_5.bmp) |
 |:--:|
-| Fig 4. Translation Invariance |
+| Fig 6. Translation Invariance |
 
 비전 분야에서 CNN 이 각광받는 이유 중 하나는 Convolution Layer 내의 커널을 이미지의 여러 영역에 동일하게 적용하기 때문이다. 이로 인해 고양이를 분류하도록 학습된 커널은 고양이가 이미지의 좌하단, 우상단, 중앙 등 어떠한 영역에 있던 문제없이 고양이의 특성을 추출해 그 존재 유무를 추측할 수 있게된다. 입력 위치가 변해도 출력은 변하지 않는다는 의미이며, 학술적으로 이는 Translation Invariance 라 칭한다 (관심이 있다면 [해당 Medium 글](https://seoilgun.medium.com/cnn%EC%9D%98-stationarity%EC%99%80-locality-610166700979)에서 보다 상세한 내용을 확인할 수 있다). 
 
@@ -96,7 +96,7 @@ Decoder 블록 또한 각 레이어 별로 Add & Normalization 이 적용된다.
 
 | ![alt text](neural_network/images/transformer_8.png) |
 |:--:|
-| Fig 5. Positional Encoding 벡터 덧셈 예시 |
+| Fig 7. Positional Encoding 벡터 덧셈 예시 |
 
 그렇다면 토큰의 위치 정보는 어떻게 벡터로 표현될 수 있을까? 사실 각 위치에 대한 벡터의 값이 일정하고, 구분될 수 있다면 생성 과정 자체는 크게 중요하지 않다. 다만 감안할 부분은 (1) Position encoding 값이 기존 임베딩 값을 지나치게 변형하면 안된다는 점 (2) 연산 과정이 복잡해 학습 시간을 지연시키면 안된다는 점 등을 들 수 있다. 논문은 sine, cosine 함수를 활용해 다음과 같은 position encoding 생성 함수를 제안한다.
 
@@ -112,7 +112,7 @@ $$
 
 | ![alt text](neural_network/images/transformer_7.png) |
 |:--:|
-| Fig 5. Positional Encoding 함수 아웃풋 예시 |
+| Fig 8. Positional Encoding 함수 아웃풋 예시 |
 
 즉, 한정된 레인지에서 추출된 position encoding 값을 통해 기존 임베딩 정보를 지나치게 왜곡하지 않는 선에서 위치 정보를 추가하는 것이다.
 
