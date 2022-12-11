@@ -6,6 +6,7 @@ slug: "mscs"
 image: "mlops/images/mscs_title.jpg"
 tags: []
 categories: []
+draft: "true"
 ---
 
 ## Lecture 내용 요약
