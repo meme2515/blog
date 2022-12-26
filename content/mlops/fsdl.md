@@ -31,6 +31,7 @@ categories: [FSDL, MLOps, 부트캠프]
 
 ## Lecture 내용 요약
 
+- [FSDL 2022 Course Overview](https://meme2515.github.io/mlops/fsdl/)
 - [Lecture 1 - When to Use ML and Course Vision](http://meme2515.github.io/mlops/fsdl_1/)
 - [Lecture 2 - Development Infrastureture & Tooling](http://meme2515.github.io/mlops/fsdl_2/)
 - [Lecture 3 - Troubleshooting & Testing](http://meme2515.github.io/mlops/fsdl_3/)
