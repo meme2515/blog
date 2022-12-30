@@ -2,10 +2,11 @@
 title: "(번역) Michelangelo : Uber 의 머신러닝 플랫폼"
 description: "Uber Blog 에 소개된 플랫폼 상세 내용 소개"
 date: "2022-12-23 00:00:00"
-slug: "fsdl"
+slug: "michelangelo"
 image: "temp/images/michelangelo_2.jpg"
 tags: [Uber, Michelangelo, 우버, 우버 머신러닝, 머신러닝 플랫폼 예시, 미켈란젤로, 우버 테크 블로그]
 categories: [Uber, 번역, Tech Blog]
+draft: "true"
 ---
 
 ## Introduction
