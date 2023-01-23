@@ -23,12 +23,12 @@ permalinks:
 
 params:
     mainSections:
+        - projects
         - machine_learning
         - neural_network
         - mlops
         - statistics
         - computer_science
-        - cloud_network
         - daily
     featuredImageField: image
     rssFullContent: true
@@ -131,10 +131,10 @@ menu:
           weight: 6
           url: /computer_science
 
-        - identifier: Cloud & Network
-          name: Cloud & Network
+        - identifier: Projects
+          name: Projects
           weight: 7
-          url: /cloud_network
+          url: /projects
 
         - identifier: Daily
           name: Daily
