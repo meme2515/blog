@@ -1,7 +1,7 @@
 baseurl: https://meme2515.github.io/
 languageCode: en-us
 theme: hugo-theme-stack
-title: Soon Hyung Kwon
+title: Soon's Blog
 
 # Change it to your Disqus shortname before using
 disqusShortname: meme2515
@@ -47,7 +47,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/avatar.png
+            src: img/dalle.png
 
     article:
         math: true
