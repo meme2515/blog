@@ -187,7 +187,7 @@ class AlexNet(nn.Module):
         return out
 {{< /highlight >}}
 
-*하이퍼파라미터 세팅 : *
+*하이퍼파라미터 세팅 :*
 
 {{< highlight python >}}
 num_classes = 10
