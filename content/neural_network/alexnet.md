@@ -11,6 +11,257 @@ categories: [AlexNet, 뉴럴넷]
 
 2012년 토론토 대학의 [Alex Krizhevsky](https://www.cs.toronto.edu/~kriz/) 팀이 공개한 AlexNet 은 [ILSVRC-2012](https://image-net.org/challenges/LSVRC/2012/) 대회에서 2등 모델의 정확도 26.2%를 10% 이상 상회하는 15.3% 의 정확도를 기록해 많은 관심을 받았던 CNN 구조이다. 특히 GPU 를 활용한 연산가속이 컴퓨터 비전 커뮤니티에서 적극적으로 사용되는 것에 기여하였으며, 이외에도 [ReLU 활성화 함수](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)), Overlapping Pooling 등 '22년 현재 당연하게 받아들여지는 CNN 구조를 정립했다.
 
+## 코드 예시
+
+아래는 [Paperspace](https://blog.paperspace.com/alexnet-pytorch/) 의 구현예시 이다. 논문에서 보이지 않는 디테일은 다음과 같다.
+
+- Convolution 레이어와 FC 레이어가 분리되어 있다.
+- Output 의 클래스 수를 설정할 수 있다. 기본값은 논문과 같은 1,000 으로 설정.
+
+*라이브러리 :*
+
+{{< highlight python >}}
+import numpy as np
+import torch
+import torch.nn as nn
+from torchvision import datasets
+from torchvision import transforms
+from torch.utils.data.sampler import SubsetRandomSampler
+
+
+# Device configuration
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+{{< /highlight >}}
+
+*데이터 로딩 :*
+
+{{< highlight python >}}
+def get_train_valid_loader(data_dir,
+                           batch_size,
+                           augment,
+                           random_seed,
+                           valid_size=0.1,
+                           shuffle=True):
+    normalize = transforms.Normalize(
+        mean=[0.4914, 0.4822, 0.4465],
+        std=[0.2023, 0.1994, 0.2010],
+    )
+
+    # define transforms
+    valid_transform = transforms.Compose([
+            transforms.Resize((227,227)),
+            transforms.ToTensor(),
+            normalize,
+    ])
+    if augment:
+        train_transform = transforms.Compose([
+            transforms.RandomCrop(32, padding=4),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            normalize,
+        ])
+    else:
+        train_transform = transforms.Compose([
+            transforms.Resize((227,227)),
+            transforms.ToTensor(),
+            normalize,
+        ])
+
+    # load the dataset
+    train_dataset = datasets.CIFAR10(
+        root=data_dir, train=True,
+        download=True, transform=train_transform,
+    )
+
+    valid_dataset = datasets.CIFAR10(
+        root=data_dir, train=True,
+        download=True, transform=valid_transform,
+    )
+
+    num_train = len(train_dataset)
+    indices = list(range(num_train))
+    split = int(np.floor(valid_size * num_train))
+
+    if shuffle:
+        np.random.seed(random_seed)
+        np.random.shuffle(indices)
+
+    train_idx, valid_idx = indices[split:], indices[:split]
+    train_sampler = SubsetRandomSampler(train_idx)
+    valid_sampler = SubsetRandomSampler(valid_idx)
+
+    train_loader = torch.utils.data.DataLoader(
+        train_dataset, batch_size=batch_size, sampler=train_sampler)
+ 
+    valid_loader = torch.utils.data.DataLoader(
+        valid_dataset, batch_size=batch_size, sampler=valid_sampler)
+
+    return (train_loader, valid_loader)
+
+
+def get_test_loader(data_dir,
+                    batch_size,
+                    shuffle=True):
+    normalize = transforms.Normalize(
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225],
+    )
+
+    # define transform
+    transform = transforms.Compose([
+        transforms.Resize((227,227)),
+        transforms.ToTensor(),
+        normalize,
+    ])
+
+    dataset = datasets.CIFAR10(
+        root=data_dir, train=False,
+        download=True, transform=transform,
+    )
+
+    data_loader = torch.utils.data.DataLoader(
+        dataset, batch_size=batch_size, shuffle=shuffle
+    )
+
+    return data_loader
+
+
+# CIFAR10 dataset 
+train_loader, valid_loader = get_train_valid_loader(data_dir = './data',                                      batch_size = 64,
+                       augment = False,                             		     random_seed = 1)
+
+test_loader = get_test_loader(data_dir = './data',
+                              batch_size = 64)
+{{< /highlight >}}
+
+*모델 본문 :*
+
+{{< highlight python >}}
+class AlexNet(nn.Module):
+    def __init__(self, num_classes=10):
+        super(AlexNet, self).__init__()
+        self.layer1 = nn.Sequential(
+            nn.Conv2d(3, 96, kernel_size=11, stride=4, padding=0),
+            nn.BatchNorm2d(96),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size = 3, stride = 2))
+        self.layer2 = nn.Sequential(
+            nn.Conv2d(96, 256, kernel_size=5, stride=1, padding=2),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size = 3, stride = 2))
+        self.layer3 = nn.Sequential(
+            nn.Conv2d(256, 384, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm2d(384),
+            nn.ReLU())
+        self.layer4 = nn.Sequential(
+            nn.Conv2d(384, 384, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm2d(384),
+            nn.ReLU())
+        self.layer5 = nn.Sequential(
+            nn.Conv2d(384, 256, kernel_size=3, stride=1, padding=1),
+            nn.BatchNorm2d(256),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size = 3, stride = 2))
+        self.fc = nn.Sequential(
+            nn.Dropout(0.5),
+            nn.Linear(9216, 4096),
+            nn.ReLU())
+        self.fc1 = nn.Sequential(
+            nn.Dropout(0.5),
+            nn.Linear(4096, 4096),
+            nn.ReLU())
+        self.fc2= nn.Sequential(
+            nn.Linear(4096, num_classes))
+        
+    def forward(self, x):
+        out = self.layer1(x)
+        out = self.layer2(out)
+        out = self.layer3(out)
+        out = self.layer4(out)
+        out = self.layer5(out)
+        out = out.reshape(out.size(0), -1)
+        out = self.fc(out)
+        out = self.fc1(out)
+        out = self.fc2(out)
+        return out
+{{< /highlight >}}
+
+*하이퍼파라미터 세팅 : *
+
+{{< highlight python >}}
+num_classes = 10
+num_epochs = 20
+batch_size = 64
+learning_rate = 0.005
+
+model = AlexNet(num_classes).to(device)
+
+# Loss and optimizer
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, weight_decay = 0.005, momentum = 0.9)  
+
+# Train the model
+total_step = len(train_loader)
+{{< /highlight >}}
+
+*학습 과정 :*
+
+{{< highlight python >}}
+total_step = len(train_loader)
+
+for epoch in range(num_epochs):
+    for i, (images, labels) in enumerate(train_loader):  
+        # Move tensors to the configured device
+        images = images.to(device)
+        labels = labels.to(device)
+        
+        # Forward pass
+        outputs = model(images)
+        loss = criterion(outputs, labels)
+        
+        # Backward and optimize
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}' 
+                   .format(epoch+1, num_epochs, i+1, total_step, loss.item()))
+            
+    # Validation
+    with torch.no_grad():
+        correct = 0
+        total = 0
+        for images, labels in valid_loader:
+            images = images.to(device)
+            labels = labels.to(device)
+            outputs = model(images)
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+            del images, labels, outputs
+    
+        print('Accuracy of the network on the {} validation images: {} %'.format(5000, 100 * correct / total)) 
+{{< /highlight >}}
+
+*테스팅 과정 :*
+
+{{< highlight python >}}
+with torch.no_grad():
+    correct = 0
+    total = 0
+    for images, labels in test_loader:
+        images = images.to(device)
+        labels = labels.to(device)
+        outputs = model(images)
+        _, predicted = torch.max(outputs.data, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+        del images, labels, outputs
+
+    print('Accuracy of the network on the {} test images: {} %'.format(10000, 100 * correct / total))   
+{{< /highlight >}}
+
 ## ImageNet (ILSVRC)
 
 - 스탠포드 대학 교수인 [Fei-Fei Li](https://profiles.stanford.edu/fei-fei-li) 가 주로 알고리즘 위주의 연구가 이루어지던 당시 AI 분야에 기여하기위해 2009년 공개한 이미지-레이블 데이터셋이다.
@@ -80,53 +331,6 @@ $$
 | ![alt text](neural_network/images/alexnet_1.png) |
 |:--:|
 | Fig 4. AlexNet 구조 (실제 논문 또한 이미지의 상단이 잘려있다) |
-
-### 코드 예시
-
-아래는 [Papers With Code](https://paperswithcode.com/method/alexnet) 에 링크된 [구현 예시](https://github.com/dansuh17/alexnet-pytorch/blob/d0c1b1c52296ffcbecfbf5b17e1d1685b4ca6744/model.py#L40)이다. 논문에서 보이지 않는 디테일은 다음과 같다.
-
-- Convolution 레이어와 FC 레이어가 분리되어 있다.
-- Output 의 클래스 수를 설정할 수 있다. 기본값은 논문과 같은 1,000 으로 설정.
-
-```
-class AlexNet(nn.Module):
-    def __init__(self, num_classes=1000):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=96, kernel_size=11, stride=4),  # (b x 96 x 55 x 55)
-            nn.ReLU(),
-            nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),  # section 3.3
-            nn.MaxPool2d(kernel_size=3, stride=2),  # (b x 96 x 27 x 27)
-            nn.Conv2d(96, 256, 5, padding=2),  # (b x 256 x 27 x 27)
-            nn.ReLU(),
-            nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
-            nn.MaxPool2d(kernel_size=3, stride=2),  # (b x 256 x 13 x 13)
-            nn.Conv2d(256, 384, 3, padding=1),  # (b x 384 x 13 x 13)
-            nn.ReLU(),
-            nn.Conv2d(384, 384, 3, padding=1),  # (b x 384 x 13 x 13)
-            nn.ReLU(),
-            nn.Conv2d(384, 256, 3, padding=1),  # (b x 256 x 13 x 13)
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=3, stride=2),  # (b x 256 x 6 x 6)
-        )
-        # classifier is just a name for linear layers
-        self.classifier = nn.Sequential(
-            nn.Dropout(p=0.5, inplace=True),
-            nn.Linear(in_features=(256 * 6 * 6), out_features=4096),
-            nn.ReLU(),
-            nn.Dropout(p=0.5, inplace=True),
-            nn.Linear(in_features=4096, out_features=4096),
-            nn.ReLU(),
-            nn.Linear(in_features=4096, out_features=num_classes),
-        )
-        self.init_bias()  # initialize bias
-
-    def init_bias(self):
-        ...
-
-    def forward(self, x):
-        ...
-```
 
 ## Overfitting
 
