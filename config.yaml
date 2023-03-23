@@ -32,7 +32,7 @@ params:
         - daily
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: 
 
     footer:
         since: 2022
@@ -47,7 +47,7 @@ params:
         avatar:
             enabled: true
             local: true
-            src: img/dalle.png
+            src: img/avatar.png
 
     article:
         math: true
