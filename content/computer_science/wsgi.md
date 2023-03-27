@@ -1,6 +1,6 @@
 ---
 title: "웹 어플리케이션 배포 - WSGI 와 NGINX 서버란"
-description: ""
+description: "Web Server, WAS 의 개념과 각 서버의 필요성 설명"
 date: "2023-03-26 00:00:00"
 slug: "wsgi"
 image: computer_science/images/wsgi_1.png
