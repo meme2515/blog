@@ -8,8 +8,6 @@ tags: [엘모, 임베딩, 뉴럴넷, ELMo, NLP, 엘모 예시, ELMo 예시]
 categories: [NLP, 뉴럴넷]
 ---
 
-{{< youtube YilcZp3WuoI >}}
-
 ## Introduction
 - ELMo 는 2018년 공개된 워드 임베딩 방법론이며, GloVe, Word2Vec 등 기존 여러 임베딩 방식이 문맥을 파악하지 못하는 단점을 보완하고자 설계되었다.
 - 예시로 River Bank (강둑) 와 Bank Account (은행 계좌) 라는 단어에서 Bank 는 전혀 다른 의미를 가지지만, 문맥을 파악하지 못하는 임베딩 기법은 Bank 에 동일한 벡터를 부여함으로 NLP 성능이 떨어질 수 밖에 없음.
