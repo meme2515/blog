@@ -1,7 +1,7 @@
 ---
 title: "로그 데이터의 개념과 활용 방식"
 description: "기본 개념 및 우아한형제들 로그 분석 예시 설명"
-date: "2023-07-14 00:00:00"
+date: "2023-07-13 00:00:00"
 slug: "log_analysis"
 image: computer_science/images/log_2.png
 tags: [Log, Computer Science, Log Data, 로그 데이터 분석, 로그 분석]
