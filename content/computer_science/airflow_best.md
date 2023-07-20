@@ -1,6 +1,6 @@
 ---
 title: "Apache Airflow 개요 및 DAG 작성 베스트 프렉티스"
-description: ""
+description: "기초 개념과 멱등성 및 기타 권장 작성법 예시"
 date: "2023-07-19 00:00:00"
 slug: "airflow_best_practices"
 image: computer_science/images/airflow_best_1.png
